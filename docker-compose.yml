@@ -1,0 +1,14 @@
+version: "3.9"
+
+services:
+  api:
+    build: .
+    ports:
+      - "3000:3000"
+      - "8080:8080"
+    env_file:
+      - .env
+    environment:
+      # Gunakan host.docker.internal agar container dapat terhubung ke MySQL yang berjalan di host Windows Anda.
+      - DB_HOST=host.docker.internal
+    restart: always
