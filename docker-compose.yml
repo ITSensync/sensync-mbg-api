@@ -8,7 +8,9 @@ services:
       - "8080:8080"
     env_file:
       - .env
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
     environment:
-      # Gunakan host.docker.internal agar container dapat terhubung ke MySQL yang berjalan di host Windows Anda.
+      # Gunakan host.docker.internal agar container dapat terhubung ke MySQL yang berjalan di host.
       - DB_HOST=host.docker.internal
     restart: always
