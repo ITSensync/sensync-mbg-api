@@ -10,6 +10,8 @@ export async function findSensorReadingAveragesWithinLastMinute(referenceTime = 
   const endTime = addSevenHours(new Date(referenceTime));
   const startTime = addSevenHours(new Date(referenceTime.getTime() - 60 * 1000));
 
+  console.log(startTime, endTime);
+
   return SensorReading.findOne({
     raw: true,
     attributes: [
