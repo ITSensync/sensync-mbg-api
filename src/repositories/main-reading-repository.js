@@ -2,13 +2,13 @@ import { col, fn, Op } from "sequelize";
 
 import { MainReading, SensorReading } from "../models/index.js";
 
-function addSevenHours(value) {
+/* function addSevenHours(value) {
   return new Date(value.getTime() + (7 * 60 * 60 * 1000));
-}
+} */
 
 export async function findSensorReadingAveragesWithinLastMinute(referenceTime = new Date()) {
-  const endTime = addSevenHours(new Date(referenceTime));
-  const startTime = addSevenHours(new Date(referenceTime.getTime() - 60 * 1000));
+  const endTime = new Date(referenceTime);
+  const startTime = new Date(referenceTime.getTime() - 60 * 1000);
 
   console.log(startTime, endTime);
 

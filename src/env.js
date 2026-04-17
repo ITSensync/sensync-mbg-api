@@ -12,7 +12,7 @@ const envSchema = z.object({
   DB_LOGGING: z.stringbool().default(false),
   CRON_TIMEZONE: z.string().default("Asia/Jakarta"),
   MAIN_READING_CRON: z.string().default("* * * * *"),
-  MAIN_SERVER: z.url().default("http://secure.getsensync.com/sensync-mbg/api/Insert.php"),
+  MAIN_SERVER: z.url().default("http://secure.getsensync.com/sensync-mbg/api/insert.php"),
 });
 
 function validateRequiredDatabaseEnv(env) {
