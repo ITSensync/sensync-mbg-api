@@ -28,7 +28,7 @@ async function pushMainReading(payload) {
   });
 
   if (!response.ok) {
-    throw new Error(`Failed to push main reading. HTTP ${response.status}`);
+    console.log(`Failed to push main reading. HTTP ${response.status}`);
   }
 }
 
